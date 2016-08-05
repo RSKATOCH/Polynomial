@@ -39,7 +39,7 @@ public class Polynomial {
         Polynomial D = A.subtract(B);
         Polynomial E = A.multiply(B);
         
-        System.out.println(new Polynomial(arr).toString());
+        System.out.println(A.toString());
         System.out.println(D.toString());
         System.out.println(E.toString());
         
