@@ -93,8 +93,15 @@ public class Polynomial {
 
 
 	private Polynomial multiply(Polynomial b) {
+		
+		int totalLength = poly.length + b.poly.length - 1;
+        double[] result = new double[totalLength];
+        for (int i = 0; i < poly.length; i++)
+            for (int j = 0; j < b.poly.length; j++) {
+                result[i + j] += poly[i] * b.poly[j];
+            }
+        return new Polynomial(result);
 		// TODO Auto-generated method stub
-		return null;
 	}
 
 
