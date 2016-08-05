@@ -87,8 +87,15 @@ public class Polynomial {
 
 
 	private String toHTML() {
-		// TODO Auto-generated method stub
-		return null;
+		String line1="<html><title>Polynomial</title><body>";
+        String line2="";
+        for(int i=0;i<poly.length;i++)
+        {
+        	line2 += signCoeff(poly[i]) + "<sup>" + i + "</sup>";
+        }
+        String line3="</body></html>";
+        String line =line1+line2+line3;
+        return line;
 	}
 
 
