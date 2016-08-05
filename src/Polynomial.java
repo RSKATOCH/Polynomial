@@ -39,7 +39,7 @@ public class Polynomial {
         Polynomial D = A.subtract(B);
         Polynomial E = A.multiply(B);
         
-        System.out.println(C.toString());
+        System.out.println(new Polynomial(arr).toString());
         System.out.println(D.toString());
         System.out.println(E.toString());
         
@@ -53,9 +53,33 @@ public class Polynomial {
 	}
 
 	public String toString() {
-		return null;
+		String polyString  = "";
+		for(int i = poly.length - 1; i >= 0; i--) {
+			if(poly[i] != 0) {
+				if(i > 0) {
+					polyString += signCoeff(poly[i]) + "x^" + i;
+				}
+				else {
+					polyString += signCoeff(poly[i]);
+				}
+					
+			}
+		}
+		
+		return polyString;
 	}
 	
+	private String signCoeff(double d) {
+		// TODO Auto-generated method stub
+		if(d < 0) {
+			return " - " + d;
+		} else {
+			return " + " + d;
+		}
+			
+	}
+
+
 	private String toLatex() {
 		// TODO Auto-generated method stub
 		return null;
