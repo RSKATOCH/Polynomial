@@ -98,15 +98,38 @@ public class Polynomial {
 	}
 
 
-	private Polynomial add(Polynomial b) {
-		// TODO Auto-generated method stub
-		return null;
+	public Polynomial add(Polynomial p) {
+			int outDegree = Math.max(p.getDegree(), this.getDegree());
+			Map<Integer,Double> newMap = new TreeMap<Integer,Double>();
+			Polynomial output = new Polynomial(newMap);
+			
+			/*Adding the coefficients till the lower degree*/
+			for (Map.Entry<Integer,Double> entry : this.map.entrySet())
+			{
+			    output.getMap().put(entry.getKey(), entry.getValue());
+			}
+			for (Map.Entry<Integer,Double> entry : p.map.entrySet())
+			{
+			    output.getMap().replace(entry.getKey(), output.getMap().get(entry.getKey())+entry.getValue());
+			}
+			return output;
 	}
-
-
-	private Polynomial subtract(Polynomial b) {
-		// TODO Auto-generated method stub
-		return null;
+	
+	public Polynomial subtract(Polynomial p){
+		int outDegree = Math.max(p.getDegree(), this.getDegree());
+		Map<Integer,Double> newMap = new TreeMap<Integer,Double>();
+		Polynomial output = new Polynomial(newMap);
+		
+		/*Adding the coefficients till the lower degree*/
+		for (Map.Entry<Integer,Double> entry : this.map.entrySet())
+		{
+		    output.getMap().put(entry.getKey(), entry.getValue());
+		}
+		for (Map.Entry<Integer,Double> entry : p.map.entrySet())
+		{
+		    output.getMap().replace(entry.getKey(), output.getMap().get(entry.getKey())-entry.getValue());
+		}
+		return output;
 	}
         
  }
