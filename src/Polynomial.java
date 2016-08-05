@@ -80,9 +80,26 @@ public class Polynomial {
 	}
 
 
-	private String toLatex() {
-		// TODO Auto-generated method stub
-		return null;
+	private  String Latexcode(double polynomial[]){
+		
+		String poly = toLatex(polynomial);
+		String latexcode = " \\ documentclass {article} \n \\begin {document}  \n \\ polynomial" + poly + "\\end{document}" ;
+		return latexcode;
+		 	
+	}
+	
+	private String toLatex(double polynomial[]){
+		
+		String poly = "{"; int i;
+		
+		for (i=0; i< polynomial.length ; i++){
+			String s = Double.toString(polynomial[i]);
+		    poly += s + ",";
+		}	
+		poly+="}";
+		
+		return poly;
+		
 	}
 
 
