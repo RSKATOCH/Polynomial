@@ -80,25 +80,25 @@ public class Polynomial {
 	}
 
 
-	private  String Latexcode(double polynomial[]){
+	private String toLatex(){
 		
-		String poly = toLatex(polynomial);
+		String poly = latexCode();
 		String latexcode = " \\ documentclass {article} \n \\begin {document}  \n \\ polynomial" + poly + "\\end{document}" ;
 		return latexcode;
 		 	
 	}
 	
-	private String toLatex(double polynomial[]){
+	private String latexCode(){
 		
-		String poly = "{"; int i;
+		String polyStr = "{"; int i;
 		
-		for (i=0; i< polynomial.length ; i++){
-			String s = Double.toString(polynomial[i]);
-		    poly += s + ",";
+		for (i=0; i< poly.length ; i++){
+			String s = Double.toString(poly[i]);
+		    polyStr += s + ",";
 		}	
-		poly+="}";
+		polyStr+="}";
 		
-		return poly;
+		return polyStr;
 		
 	}
 
